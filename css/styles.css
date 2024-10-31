@@ -1,0 +1,107 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0e8; /* Bege gelo */
+    color: #333333; /* Cinza Escuro para o texto */
+    margin: 0;
+    padding-top: 56px; /* Altura da navbar para compensar o conteúdo */
+    padding-bottom: 60px; /* Altura do footer para compensar o conteúdo */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #4CAF50; /* Verde Escuro */
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Fonte para títulos */
+    font-size: 1.8em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Links de Navegação */
+nav a {
+    color: white;
+    padding: 10px 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #8B5E3C; /* Marrom Suave ao passar o mouse */
+    color: #F7F3E9;
+}
+
+/* Seções Principais */
+section {
+    padding: 30px 20px;
+    margin-top: 90px
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Fonte para cabeçalhos */
+    color: #4CAF50;
+    margin-top: 90px
+}
+
+/* Botões */
+button, .btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #8B5E3C; /* Marrom Suave ao passar o mouse */
+}
+
+/* Formulário de Contato */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+input:focus, textarea:focus {
+    border-color: #4CAF50;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333333; /* Cinza Escuro */
+    color: #F7F3E9; /* Bege Claro */
+    text-align: center;
+    padding: 12px;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #F7F3E9;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #8B5E3C; /* Marrom Suave */
+}
