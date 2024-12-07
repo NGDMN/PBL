@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Apoio - Contato</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Portal de Apoio</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('sobre') }}">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('marketplace') }}">Marketplace</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('treinamentos') }}">Treinamentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Fale Conosco</a></li>
+                </ul>
+                <div class="navbar-nav ml-auto">
+                    <a href="#" class="btn btn-outline-light mx-1">Login</a>
+                    <a href="#" class="btn btn-outline-light mx-1">Cadastro</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contato Form -->
+    <div class="container my-5">
+        <h2>Fale Conosco</h2>
+        <p>Envie uma mensagem e responderemos o mais rápido possível!</p>
+        <form action="{{ url_for('submit_form') }}" method="post" class="p-4 bg-white rounded shadow">
+            <div class="form-group">
+                <label for="nome">Nome Completo
+                    <i class="fas fa-info-circle" data-toggle="tooltip" title="Digite seu nome completo."></i>
+                </label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail
+                    <i class="fas fa-info-circle" data-toggle="tooltip" title="Digite um e-mail válido."></i>
+                </label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Descrição da Mensagem
+                    <i class="fas fa-info-circle" data-toggle="tooltip" title="Sua mensagem deve ter entre 30 e 500 caracteres, e não pode conter ';'."></i>
+                </label>
+                <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required></textarea>
+                <small id="charCount" class="form-text text-muted">0/500 caracteres</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+        </form>
+    </div>
+    
+    <!-- Bibliotecas necessárias -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© 2024 Portal de Apoio à Agricultura Familiar e Segurança Alimentar</p>
+    </footer>
+</body>
+</html>

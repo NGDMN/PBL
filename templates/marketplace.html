@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Apoio - Marketplace</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
 <body>
     <header>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="index.html">Portal de Apoio</a>
+            <a class="navbar-brand" href="{{ url_for('index') }}">Portal de Apoio</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link" href="marketplace.html">Marketplace</a></li>
-                    <li class="nav-item"><a class="nav-link" href="treinamentos.html">Treinamentos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contato.html">Fale Conosco</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('sobre') }}">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('marketplace') }}">Marketplace</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('treinamentos') }}">Treinamentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Fale Conosco</a></li>
                 </ul>
                 <div class="navbar-nav ml-auto">
                     <a href="#" class="btn btn-outline-light mx-1">Login</a>
@@ -26,38 +26,40 @@
                 </div>
             </div>
         </nav>
-</header>
+    </header>
 
     <!-- Content -->
     <div class="container my-5">
         <h2>Marketplace</h2>
+        <input type="text" id="search" class="form-control mb-3" placeholder="Buscar produtos...">
         <p>Conecte-se diretamente com produtores familiares e compre produtos frescos e sustentáveis.</p>
         <!-- Example Product List -->
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row" id="productList">
+            <div class="col-md-4 product-card" data-name="Arroz">
                 <div class="card">
-                    <img src="images/saca_de_arroz-Foto-Arquivo-EBC.webp" class="card-img-top" alt="Produto" height="200">
+                    <img src="{{ url_for('static', filename='images/saca_de_arroz-Foto-Arquivo-EBC.webp') }}" class="card-img-top" alt="Produto" height="200">
                     <div class="card-body">
-                        <h5 class="card-title">Produto 1</h5>
+                        <h5 class="card-title">Arroz</h5>
                         <p class="card-text">Descrição do produto.</p>
                         <a href="#" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 product-card" data-name="Leite">
                 <div class="card">
-                    <img src="images/Leite.jpg" class="card-img-top" alt="Produto" height="200">
+                    <img src="{{ url_for('static', filename='images/Leite.jpg') }}" class="card-img-top" alt="Produto" height="200">
                     <div class="card-body">
-                        <h5 class="card-title">Produto 2</h5>
+                        <h5 class="card-title">Leite</h5>
                         <p class="card-text">Descrição do produto.</p>
                         <a href="#" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
-            </div><div class="col-md-4">
+            </div>
+            <div class="col-md-4 product-card" data-name="Café">
                 <div class="card">
-                    <img src="images/Café.jpg" class="card-img-top" alt="Produto" height="200">
+                    <img src="{{ url_for('static', filename='images/Café.jpg') }}" class="card-img-top" alt="Produto" height="200">
                     <div class="card-body">
-                        <h5 class="card-title">Produto 3</h5>
+                        <h5 class="card-title">Café</h5>
                         <p class="card-text">Descrição do produto.</p>
                         <a href="#" class="btn btn-primary">Comprar</a>
                     </div>
@@ -71,6 +73,11 @@
     <footer class="text-center py-4">
         <p>© 2024 Portal de Apoio à Agricultura Familiar e Segurança Alimentar</p>
     </footer>
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
 </html>
